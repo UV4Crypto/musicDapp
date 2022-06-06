@@ -1,9 +1,5 @@
 // access Web3auth package from window.
 
-
-
-
-
 const web3authSdk = window.Web3auth;
 let web3AuthInstance = null;
 
@@ -49,8 +45,6 @@ function subscribeAuthEvents(web3auth) {
 // ⭐️ STEP 4:
 // this function will be triggered on click of button with login id.
 $("#login").click(async function (event) {
-
-
   // if(window.ethereum){
 
   // }else{
@@ -62,7 +56,7 @@ $("#login").click(async function (event) {
   } catch (error) {
     $("#error").text(error.message);
   }
-// }
+  // }
 });
 
 //<script>
@@ -72,30 +66,71 @@ async function initWeb3() {
   // we can access this provider on `web3AuthInstance` only after user is logged in.
   // This provider is also returned as a response of `connect` function in step 4. You can use either ways.
   const web3 = new Web3(web3AuthInstance.provider);
-  const address = (await web3.eth.getAccounts())[0];
+   address = (await web3.eth.getAccounts())[0];
   const balance = await web3.eth.getBalance(address);
   console.log(address);
   console.log(balance);
   $("#login").css("visibility", "hidden");
   $("#logout").css("visibility", "visible");
   $("#balance").text(balance);
+
+  /////////////////////////////
+  firebase
+    .database()
+    .ref("users/" + address)
+    .on("value", (sanpshot) => {
+      // console.log(sanpshot.val());
+
+      var bal;
+      // addr=sanpshot.val().address;
+      bal = sanpshot.val().balance;
+      // console.log( "balance :"+addr);
+      console.log("balance :" + bal);
+      $("#mcoin").text("M Coin : " + bal);
+      $("#mcoin").css("visibility", "visible");
+      if (bal > 0) {
+      } else {
+        let obj = {
+          address: address,
+          balance: 0,
+        };
+        firebase
+          .database()
+          .ref("users/" + address)
+          .set(obj);
+      }
+    });
+  //////////////////
 }
 
-
-
-//</script>
-
-//<script>
-
-// ⭐️ STEP 6:
 $("#logout").click(async function (event) {
   try {
     await web3AuthInstance.logout();
     $("#login").css("visibility", "visible");
-  $("#logout").css("visibility", "hidden");
+    $("#logout").css("visibility", "hidden");
+    $("#mcoin").css("visibility", "hidden");
   } catch (error) {
     $("#error").text(error.message);
   }
 });
 
-//</script>
+
+$("#0").click(()=> {
+  console.log("bbbb1");
+  let count;
+
+  firebase.database().ref("users/"+address).on("value", (sanpshot) => {
+          console.log(sanpshot.val());
+           count=sanpshot.val().balance;
+          console.log(count); 
+        });   
+        count+=1;
+  // disp.innerHTML = count;
+     let newupdateddata = {
+      balance:count,
+      
+};
+firebase.database().ref("users/"+address).update(newupdateddata);
+console.log("bbbb")
+  
+});

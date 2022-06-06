@@ -9,6 +9,9 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.7.0/dist/web3.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/@web3auth/web3auth@0.2.2/dist/web3auth.umd.min.js"></script>
+
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
         </head>
 <body>
     <nav>
@@ -18,6 +21,8 @@
             <li>About</li>
             <li id="login">login</li>
             <li id="logout">logout</li>
+            <li id="mcoin">M-Coin</li>
+
         </ul>
     </nav>
 
@@ -28,52 +33,52 @@
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="0" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="0"  class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="1" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="1"  class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="2" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="2"  class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="3" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="3"  class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="4" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="4"  class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="5" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="5"  class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="6" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="6"   class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="7" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="7"   class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="8" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="8"   class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
                 <div class="songItem">
                     <img alt="1">
                     <span class="songName">Let me Love You</span>
-                    <span class="songlistplay"><span class="timestamp">05:34 <i id="9" class="far songItemPlay fa-play-circle"></i> </span></span>
+                    <span class="songlistplay"><span class="timestamp">05:34 <i id="9"   class="far songItemPlay fa-play-circle"></i> </span></span>
                 </div>
             </div>
         </div>
@@ -92,8 +97,10 @@
             <img src="playing.gif" width="42px" alt="" id="gif"> <span id="masterSongName">Warriyo - Mortals [NCS Release]</span>
         </div>
     </div>
+    <script type="text/javascript" src="/configdatabase.js"></script>
+
     <script src="script.js"></script>
     <script src="https://kit.fontawesome.com/26504e4a1f.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="/abc.js"></script>
+    <script type="text/javascript" src="/main.js"></script>
 </body>
 </html>

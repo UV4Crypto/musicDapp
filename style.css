@@ -146,3 +146,18 @@ nav ul li{
       border: 1px solid white;
       border-radius: 5px;
   }
+
+  #mcoin{
+    position: absolute;
+    right: 200px;
+    font-size: 20px;
+    visibility: hidden;
+    
+  }
+
+  #mcoin:hover{
+      cursor: pointer;
+      border: 1px solid white;
+      border-radius: 5px;
+  }
+
