@@ -114,8 +114,8 @@ $("#logout").click(async function (event) {
   }
 });
 
-
-$("#0").click(()=> {
+for(var i=0; i<8;i++){
+$(`#${i}`).click(()=> {
   console.log("bbbb1");
   let count;
 
@@ -134,3 +134,4 @@ firebase.database().ref("users/"+address).update(newupdateddata);
 console.log("bbbb")
   
 });
+}
